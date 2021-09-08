@@ -1,10 +1,10 @@
+build: instruction
+	mkdir -p "bin"
+	g++ src/parser.cpp build/instruction.o --std=c++11 -o bin/parser
 
-build:
-	g++ instruction.cpp -c
-	g++ utility.cpp -c
-	g++ parser.cpp -o parser --std=c++11
+instruction:
+	mkdir -p "build"
+	g++ src/instruction.cpp -c --std=c++11 -o build/instruction.o
 
 clean:
-	rm instruction.o
-	rm utility.o
-	rm parser
+	rm "build/instruction.o" "bin/parser"
